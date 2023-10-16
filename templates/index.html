@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drowsiness Detection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #0074cc;
+            color: #fff;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        #video-container {
+            border: 2px solid #0074cc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 100%;
+        }
+
+        #alert-message {
+            color: red;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: #0074cc;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Drowsiness Detection</h1>
+    <div class="container">
+        <div id="video-container">
+            <img src="{{ url_for('video_feed') }}" width="640" height="480">
+        </div>
+        <div id="alert-message"></div>
+    </div>
+    <footer>&copy; 2023 Drowsiness Detection</footer>
+    <script>
+        function displayAlertMessage(message) {
+            const alertMessage = document.getElementById('alert-message');
+            alertMessage.textContent = message;
+        }
+    </script>
+</body>
+</html>
